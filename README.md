@@ -8,9 +8,37 @@ A collection of sketching algorithms in Swift.
 WIP
 
 ## To-do list
+* [x] BitSet
 * [x] HyperLogLog
 * [ ] Bloom filter
 * [ ] Count-min
+
+## BitSet
+
+An array-like structure that is optimized to store bits efficiently.
+
+### Usage
+
+```swift
+//  create a bit set of 100 bits
+var s = BitSet(bitWidth: 100)
+
+//  set bit 0 and 2
+s[0] = true
+s[2] = true
+```
+
+```
+(lldb) po s
+BitSet (width=100, value=101)
+```
+
+```swift
+//  bitwise operators
+let conjunction = s1 & s2
+let disjunction = s1 | s2
+let negation = ~s1
+```
 
 ## HyperLogLog
 
