@@ -1,17 +1,17 @@
 # Sketching Algorithms
 A collection of sketching algorithms in Swift.
 
+* [x] BitSet
+* [x] MinHash
+* [x] HyperLogLog
+* [ ] Bloom filter
+* [ ] Count-min
+
 # Overview
 
 ## Installation
 
 WIP
-
-## To-do list
-* [x] BitSet
-* [x] HyperLogLog
-* [ ] Bloom filter
-* [ ] Count-min
 
 ## BitSet
 
@@ -39,6 +39,8 @@ let conjunction = s1 & s2
 let disjunction = s1 | s2
 let negation = ~s1
 ```
+
+## MinHash
 
 ## HyperLogLog
 

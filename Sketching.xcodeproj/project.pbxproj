@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E82983FF222F17CC00E42084 /* MinHashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82983FE222F17CC00E42084 /* MinHashTests.swift */; };
+		E8298401222F1B2100E42084 /* FNV1AHashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8298400222F1B2100E42084 /* FNV1AHashing.swift */; };
 		E84D9057222A9BDA0085A650 /* Sketching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84D904D222A9BDA0085A650 /* Sketching.framework */; };
 		E84D905C222A9BDA0085A650 /* HyperLogLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D905B222A9BDA0085A650 /* HyperLogLogTests.swift */; };
 		E84D905E222A9BDA0085A650 /* Sketching.h in Headers */ = {isa = PBXBuildFile; fileRef = E84D9050222A9BDA0085A650 /* Sketching.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E84D9066222A9BE90085A650 /* HyperLogLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D9065222A9BE90085A650 /* HyperLogLog.swift */; };
 		E84D9068222AA83E0085A650 /* Hashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D9067222AA83E0085A650 /* Hashing.swift */; };
 		E84D906A222ABC300085A650 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E84D9069222ABC300085A650 /* README.md */; };
+		E86472E8222C5C0F0086456A /* MinHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86472E7222C5C0F0086456A /* MinHash.swift */; };
 		E8A9C03C222B057F00E6746B /* BitSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9C03B222B057F00E6746B /* BitSet.swift */; };
 		E8A9C03E222B08D800E6746B /* BitSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9C03D222B08D800E6746B /* BitSetTests.swift */; };
 		E8A9C042222B0ED100E6746B /* builtins.h in Headers */ = {isa = PBXBuildFile; fileRef = E8A9C040222B0ED100E6746B /* builtins.h */; };
@@ -30,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E82983FE222F17CC00E42084 /* MinHashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinHashTests.swift; sourceTree = "<group>"; };
+		E8298400222F1B2100E42084 /* FNV1AHashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNV1AHashing.swift; sourceTree = "<group>"; };
 		E84D904D222A9BDA0085A650 /* Sketching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sketching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84D9050222A9BDA0085A650 /* Sketching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sketching.h; sourceTree = "<group>"; };
 		E84D9051222A9BDA0085A650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,6 +44,7 @@
 		E84D9065222A9BE90085A650 /* HyperLogLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperLogLog.swift; sourceTree = "<group>"; };
 		E84D9067222AA83E0085A650 /* Hashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hashing.swift; sourceTree = "<group>"; };
 		E84D9069222ABC300085A650 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E86472E7222C5C0F0086456A /* MinHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinHash.swift; sourceTree = "<group>"; };
 		E8A9C03B222B057F00E6746B /* BitSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitSet.swift; sourceTree = "<group>"; };
 		E8A9C03D222B08D800E6746B /* BitSetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitSetTests.swift; sourceTree = "<group>"; };
 		E8A9C040222B0ED100E6746B /* builtins.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = builtins.h; sourceTree = "<group>"; };
@@ -87,12 +93,13 @@
 		E84D904F222A9BDA0085A650 /* Sketching */ = {
 			isa = PBXGroup;
 			children = (
-				E8A9C03F222B0E8100E6746B /* Bridged */,
+				E84D9050222A9BDA0085A650 /* Sketching.h */,
+				E84D9051222A9BDA0085A650 /* Info.plist */,
 				E8A9C03B222B057F00E6746B /* BitSet.swift */,
 				E84D9067222AA83E0085A650 /* Hashing.swift */,
 				E84D9065222A9BE90085A650 /* HyperLogLog.swift */,
-				E84D9051222A9BDA0085A650 /* Info.plist */,
-				E84D9050222A9BDA0085A650 /* Sketching.h */,
+				E86472E7222C5C0F0086456A /* MinHash.swift */,
+				E8A9C03F222B0E8100E6746B /* Bridged */,
 			);
 			path = Sketching;
 			sourceTree = "<group>";
@@ -100,9 +107,11 @@
 		E84D905A222A9BDA0085A650 /* SketchingTests */ = {
 			isa = PBXGroup;
 			children = (
+				E84D905D222A9BDA0085A650 /* Info.plist */,
 				E8A9C03D222B08D800E6746B /* BitSetTests.swift */,
 				E84D905B222A9BDA0085A650 /* HyperLogLogTests.swift */,
-				E84D905D222A9BDA0085A650 /* Info.plist */,
+				E82983FE222F17CC00E42084 /* MinHashTests.swift */,
+				E8298400222F1B2100E42084 /* FNV1AHashing.swift */,
 			);
 			path = SketchingTests;
 			sourceTree = "<group>";
@@ -229,6 +238,7 @@
 			files = (
 				E8A9C03C222B057F00E6746B /* BitSet.swift in Sources */,
 				E8A9C043222B0ED100E6746B /* builtins.c in Sources */,
+				E86472E8222C5C0F0086456A /* MinHash.swift in Sources */,
 				E84D9068222AA83E0085A650 /* Hashing.swift in Sources */,
 				E84D9066222A9BE90085A650 /* HyperLogLog.swift in Sources */,
 			);
@@ -240,6 +250,8 @@
 			files = (
 				E8A9C03E222B08D800E6746B /* BitSetTests.swift in Sources */,
 				E84D905C222A9BDA0085A650 /* HyperLogLogTests.swift in Sources */,
+				E82983FF222F17CC00E42084 /* MinHashTests.swift in Sources */,
+				E8298401222F1B2100E42084 /* FNV1AHashing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
