@@ -11,7 +11,7 @@ A collection of sketching algorithms in Swift.
 
 ## Installation
 
-### Carthage
+### Carthage
 
 Add `Sketching` as a dependency in your project's Cartfile:
 ```
@@ -47,21 +47,47 @@ let negation = ~s1
 
 ## MinHash
 
+### Usage
+
+Build a `MinHash` and insert some elements in it:
+
+```swift
+var a = MinHash<FNV1AHashing>(hashCount: 64)
+a.insert("a".utf8)
+a.insert("b".utf8)
+a.insert("c".utf8)
+```
+
+```swift
+var b = MinHash<FNV1AHashing>(hashCount: 64)
+b.insert("a".utf8)
+b.insert("b".utf8)
+```
+
+Compare the similarity of two `MinHash` structs:
+
+```
+(lldb) po a.jaccard(b)
+0.734375
+```
+
+Form an union between two `MinHash`:
+
+```swift
+let c = a.union(b)
+```
+
+```
+(lldb) po a.jaccard(c)
+1.0
+```
+
 ## HyperLogLog
 
 ### Reference
 - http://algo.inria.fr/flajolet/Publications/FlFuGaMe07.pdf
 
 ### Usage
-Have a class/struct conform the `Hashing` protocol by defining an hashing function that produces a 32bit hash.
-For example, the test cases use the [fnv1a hash function](https://en.wikipedia.org/wiki/Fowler–Noll–Vo_hash_function):
-
-```swift
-struct FNV1AHashing: Hashing
-```
-
-With the hashing function just defined:
-
 ```swift
 var ll = HyperLogLog<FNV1AHashing>()
 ll.insert("abc".utf8)
