@@ -1,9 +1,9 @@
 # Sketching Algorithms
 A collection of sketching algorithms in Swift.
 
-* [x] BitSet
-* [x] MinHash
-* [x] HyperLogLog
+* [x] [BitSet](#bitset)
+* [x] [MinHash](#minhash)
+* [x] [HyperLogLog](#hyperloglog)
 * [ ] Bloom filter
 * [ ] Count-min
 
