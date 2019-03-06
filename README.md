@@ -4,7 +4,7 @@ A collection of sketching algorithms in Swift.
 * [x] [BitSet](#bitset)
 * [x] [MinHash](#minhash)
 * [x] [HyperLogLog](#hyperloglog)
-* [ ] Bloom filter
+* [x] [Bloom filter](#bloom-filter)
 * [ ] Count-min
 
 # Overview
@@ -99,3 +99,6 @@ ll.insert("abc".utf8)
 (lldb) po ll.cardinality()
 2.007853430022625
 ```
+
+## Bloom Filter
+

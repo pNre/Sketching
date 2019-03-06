@@ -25,6 +25,9 @@
 		E8BDA97E222FD4620044465B /* HyperLogLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84D9065222A9BE90085A650 /* HyperLogLog.swift */; };
 		E8BDA97F222FD4620044465B /* MinHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86472E7222C5C0F0086456A /* MinHash.swift */; };
 		E8BDA980222FD4620044465B /* builtins.c in Sources */ = {isa = PBXBuildFile; fileRef = E8A9C041222B0ED100E6746B /* builtins.c */; };
+		E8BDA982222FD5C30044465B /* BloomFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BDA981222FD5C30044465B /* BloomFilter.swift */; };
+		E8BDA983222FD5C30044465B /* BloomFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BDA981222FD5C30044465B /* BloomFilter.swift */; };
+		E8BDA98B222FDBF50044465B /* BloomFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BDA98A222FDBF50044465B /* BloomFilterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,8 @@
 		E8A9C041222B0ED100E6746B /* builtins.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = builtins.c; sourceTree = "<group>"; };
 		E8A9C045222B105200E6746B /* module.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 		E8BDA974222FD07D0044465B /* Sketching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sketching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8BDA981222FD5C30044465B /* BloomFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomFilter.swift; sourceTree = "<group>"; };
+		E8BDA98A222FDBF50044465B /* BloomFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomFilterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +115,7 @@
 				E84D9050222A9BDA0085A650 /* Sketching.h */,
 				E84D9051222A9BDA0085A650 /* Info.plist */,
 				E8A9C03B222B057F00E6746B /* BitSet.swift */,
+				E8BDA981222FD5C30044465B /* BloomFilter.swift */,
 				E84D9067222AA83E0085A650 /* Hashing.swift */,
 				E84D9065222A9BE90085A650 /* HyperLogLog.swift */,
 				E86472E7222C5C0F0086456A /* MinHash.swift */,
@@ -123,6 +129,7 @@
 			children = (
 				E84D905D222A9BDA0085A650 /* Info.plist */,
 				E8A9C03D222B08D800E6746B /* BitSetTests.swift */,
+				E8BDA98A222FDBF50044465B /* BloomFilterTests.swift */,
 				E8298400222F1B2100E42084 /* Hashing.swift */,
 				E84D905B222A9BDA0085A650 /* HyperLogLogTests.swift */,
 				E82983FE222F17CC00E42084 /* MinHashTests.swift */,
@@ -289,6 +296,7 @@
 				E8A9C03C222B057F00E6746B /* BitSet.swift in Sources */,
 				E8A9C043222B0ED100E6746B /* builtins.c in Sources */,
 				E86472E8222C5C0F0086456A /* MinHash.swift in Sources */,
+				E8BDA982222FD5C30044465B /* BloomFilter.swift in Sources */,
 				E84D9068222AA83E0085A650 /* Hashing.swift in Sources */,
 				E84D9066222A9BE90085A650 /* HyperLogLog.swift in Sources */,
 			);
@@ -301,6 +309,7 @@
 				E8A9C03E222B08D800E6746B /* BitSetTests.swift in Sources */,
 				E84D905C222A9BDA0085A650 /* HyperLogLogTests.swift in Sources */,
 				E82983FF222F17CC00E42084 /* MinHashTests.swift in Sources */,
+				E8BDA98B222FDBF50044465B /* BloomFilterTests.swift in Sources */,
 				E8298401222F1B2100E42084 /* Hashing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +321,7 @@
 				E8BDA97C222FD4620044465B /* BitSet.swift in Sources */,
 				E8BDA97D222FD4620044465B /* Hashing.swift in Sources */,
 				E8BDA97E222FD4620044465B /* HyperLogLog.swift in Sources */,
+				E8BDA983222FD5C30044465B /* BloomFilter.swift in Sources */,
 				E8BDA97F222FD4620044465B /* MinHash.swift in Sources */,
 				E8BDA980222FD4620044465B /* builtins.c in Sources */,
 			);
