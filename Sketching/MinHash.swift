@@ -13,23 +13,23 @@ public struct MinHash<Hasher: Hashing> {
         return .max
     }
 
-    public let state: [PermutationParams<Hasher>]
+    public let permutationParameters: [PermutationParams<Hasher>]
     private var hashValues: [UInt32]
 
     public init(permutationCount: Int) {
         self.hashValues = Array(repeating: MinHash.maxHash, count: permutationCount)
-        self.state = (0..<permutationCount).map { _ in PermutationParams() }
+        self.permutationParameters = (0..<permutationCount).map { _ in PermutationParams() }
     }
 
-    public init(state: [PermutationParams<Hasher>]) {
-        self.hashValues = Array(repeating: MinHash.maxHash, count: state.count)
-        self.state = state
+    public init(permutationParameters: [PermutationParams<Hasher>]) {
+        self.hashValues = Array(repeating: MinHash.maxHash, count: permutationParameters.count)
+        self.permutationParameters = permutationParameters
     }
 
     public mutating func insert<C: Collection>(_ v: C) where C.Element == UInt8 {
         let hashedValue = Hasher.hash(v)
         for i in 0..<hashValues.count {
-            let perm = state[i].computePermution(for: hashedValue)
+            let perm = permutationParameters[i].computePermution(for: hashedValue)
             if perm < hashValues[i] {
                 hashValues[i] = perm
             }
@@ -43,14 +43,14 @@ public struct MinHash<Hasher: Hashing> {
     }
 
     public mutating func formUnion(_ other: MinHash) {
-        precondition(state == other.state, "Both MinHash must be initialized with the same state")
+        precondition(permutationParameters == other.permutationParameters, "Both MinHash must be initialized with the same permutationParameters")
         for i in 0..<hashValues.count {
             hashValues[i] = min(hashValues[i], other.hashValues[i])
         }
     }
 
     public func jaccard(_ other: MinHash) -> Double {
-        precondition(state == other.state, "Both MinHash must be initialized with the same state")
+        precondition(permutationParameters == other.permutationParameters, "Both MinHash must be initialized with the same permutationParameters")
 
         var intersection = 0
         for i in 0..<hashValues.count where hashValues[i] == other.hashValues[i] {

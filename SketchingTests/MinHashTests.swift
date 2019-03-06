@@ -12,7 +12,7 @@ class MinHashTests: XCTestCase {
 
     func testStateInitialization() {
         let h = MinHash<FNV1AHashing>(permutationCount: 64)
-        XCTAssertEqual(h.state.count, 64)
+        XCTAssertEqual(h.permutationParameters.count, 64)
     }
 
     func testDistanceForEqualSets() {
@@ -30,7 +30,7 @@ class MinHashTests: XCTestCase {
         a.insert("b".utf8)
         a.insert("c".utf8)
 
-        var b = MinHash<FNV1AHashing>(state: a.state)
+        var b = MinHash<FNV1AHashing>(permutationParameters: a.permutationParameters)
         b.insert("a".utf8)
         b.insert("b".utf8)
 
@@ -44,7 +44,7 @@ class MinHashTests: XCTestCase {
         a.insert("b".utf8)
         a.insert("c".utf8)
 
-        var b = MinHash<FNV1AHashing>(state: a.state)
+        var b = MinHash<FNV1AHashing>(permutationParameters: a.permutationParameters)
         b.insert("a".utf8)
         b.insert("b".utf8)
 
