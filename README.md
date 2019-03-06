@@ -11,7 +11,12 @@ A collection of sketching algorithms in Swift.
 
 ## Installation
 
-WIP
+### Carthage
+
+Add `Sketching` as a dependency in your project's Cartfile:
+```
+github "pNre/Sketching"
+```
 
 ## BitSet
 
@@ -52,16 +57,7 @@ Have a class/struct conform the `Hashing` protocol by defining an hashing functi
 For example, the test cases use the [fnv1a hash function](https://en.wikipedia.org/wiki/Fowler–Noll–Vo_hash_function):
 
 ```swift
-class FNV1AHashing: Hashing {
-    static func hash<C: Collection>(_ val: C) -> UInt32 where C.Element == UInt8 {
-        var hash: UInt32 = 2166136261
-        for byte in val {
-            hash ^= UInt32(byte)
-            hash = hash &* 16777619
-        }
-        return hash
-    }
-}
+struct FNV1AHashing: Hashing
 ```
 
 With the hashing function just defined:

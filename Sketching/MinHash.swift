@@ -9,29 +9,24 @@ import Foundation
 
 public struct MinHash<Hasher: Hashing> {
 
-    private static var maxHash: UInt32 {
-        return .max
-    }
-
-    public let permutationParameters: [PermutationParams<Hasher>]
+    public let permutationParameters: [PermutationParams]
     private var hashValues: [UInt32]
 
-    public init(permutationCount: Int) {
-        self.hashValues = Array(repeating: MinHash.maxHash, count: permutationCount)
-        self.permutationParameters = (0..<permutationCount).map { _ in PermutationParams() }
+    public init(permutationParameterCount: Int) {
+        self.hashValues = Array(repeating: .max, count: permutationParameterCount)
+        self.permutationParameters = (0..<permutationParameterCount).map { _ in PermutationParams() }
     }
 
-    public init(permutationParameters: [PermutationParams<Hasher>]) {
-        self.hashValues = Array(repeating: MinHash.maxHash, count: permutationParameters.count)
+    public init(permutationParameters: [PermutationParams]) {
+        self.hashValues = Array(repeating: .max, count: permutationParameters.count)
         self.permutationParameters = permutationParameters
     }
 
     public mutating func insert<C: Collection>(_ v: C) where C.Element == UInt8 {
-        let hashedValue = Hasher.hash(v)
+        let hashes = Hasher.hash(v, upperBound: UInt32.max, count: hashValues.count)
         for i in 0..<hashValues.count {
-            let perm = permutationParameters[i].computePermution(for: hashedValue)
-            if perm < hashValues[i] {
-                hashValues[i] = perm
+            if hashes[i] < hashValues[i] {
+                hashValues[i] = hashes[i]
             }
         }
     }
@@ -64,13 +59,13 @@ public struct MinHash<Hasher: Hashing> {
 
 extension MinHash {
 
-    public struct PermutationParams<Hasher: Hashing>: Equatable {
-        private let a = UInt32.random(in: 1...MinHash.maxHash)
-        private let b = UInt32.random(in: 0...MinHash.maxHash)
+    public struct PermutationParams: Equatable {
+        private let a = UInt32.random(in: 1...UInt32.max)
+        private let b = UInt32.random(in: 0...UInt32.max)
 
         public func computePermution(for x: UInt32) -> UInt32 {
             let prime: UInt64 = (1 << 61) - 1
-            return UInt32(((UInt64(a) * UInt64(x) + UInt64(b)) % prime) % UInt64(MinHash.maxHash))
+            return UInt32(((UInt64(a) * UInt64(x) + UInt64(b)) % prime) % UInt64(UInt32.max))
         }
     }
 

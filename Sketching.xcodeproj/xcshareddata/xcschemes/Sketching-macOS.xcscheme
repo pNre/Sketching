@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E84D904C222A9BDA0085A650"
-               BuildableName = "Sketching_macOS.framework"
+               BuildableName = "Sketching.framework"
                BlueprintName = "Sketching-macOS"
                ReferencedContainer = "container:Sketching.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E84D904C222A9BDA0085A650"
-            BuildableName = "Sketching_macOS.framework"
+            BuildableName = "Sketching.framework"
             BlueprintName = "Sketching-macOS"
             ReferencedContainer = "container:Sketching.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E84D904C222A9BDA0085A650"
-            BuildableName = "Sketching_macOS.framework"
+            BuildableName = "Sketching.framework"
             BlueprintName = "Sketching-macOS"
             ReferencedContainer = "container:Sketching.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E84D904C222A9BDA0085A650"
-            BuildableName = "Sketching_macOS.framework"
+            BuildableName = "Sketching.framework"
             BlueprintName = "Sketching-macOS"
             ReferencedContainer = "container:Sketching.xcodeproj">
          </BuildableReference>

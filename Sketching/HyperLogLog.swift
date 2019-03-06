@@ -43,7 +43,7 @@ public struct HyperLogLog<Hasher: Hashing> {
     }
 
     public mutating func insert<C: Collection>(_ v: C) where C.Element == UInt8 {
-        let hashedValue = Hasher.hash(v)
+        let hashedValue = Hasher.hash(v, upperBound: UInt32.max, count: 1)[0]
         let index = hashedValue & UInt32(m - 1)
         let bits = hashedValue >> p
         registers[Int(index)] = max(registers[Int(index)], UInt8(rank(of: bits)))
