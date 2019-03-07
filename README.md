@@ -5,11 +5,12 @@ A collection of sketching algorithms in Swift.
 * [x] [MinHash](#minhash)
 * [x] [HyperLogLog](#hyperloglog)
 * [x] [Bloom filter](#bloom-filter)
-* [ ] Count-min
 
 # Overview
 
 ## Installation
+
+### Swift Package Manager
 
 ### Carthage
 
@@ -102,3 +103,28 @@ ll.insert("abc".utf8)
 
 ## Bloom Filter
 
+### Usage
+
+Init a `BloomFilter` with a certain size and number of hash functions:
+
+```swift
+var f = BloomFilter<FNV1AHashing>(bitWidth: 128, hashCount: 16)
+```
+
+Init a `BloomFilter` with the expected item count and probability of false positives:
+
+```swift
+var f = BloomFilter<FNV1AHashing>(expectedCardinality: 10, probabilityOfFalsePositives: 0.001)
+```
+
+Insert some elements:
+```swift
+f.insert("abc".utf8)
+f.insert("def".utf8)
+```
+
+Test containment:
+```
+(lldb) po f.contains("gh".utf8)
+false
+```
