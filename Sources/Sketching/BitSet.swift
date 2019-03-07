@@ -71,10 +71,18 @@ extension BitSet {
         return conjunction
     }
 
+    public static func &= (lhs: inout BitSet, rhs: BitSet) {
+        lhs = lhs & rhs
+    }
+
     public static func | (lhs: BitSet, rhs: BitSet) -> BitSet {
         var conjunction = lhs
         conjunction.formDisjunction(rhs)
         return conjunction
+    }
+
+    public static func |= (lhs: inout BitSet, rhs: BitSet) {
+        lhs = lhs | rhs
     }
 
     public static prefix func ~ (set: BitSet) -> BitSet {

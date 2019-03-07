@@ -77,6 +77,26 @@ public struct BloomFilter<Hasher: Hashing> {
 
 extension BloomFilter {
 
+    /// Adds the elements of the given filter to the filter.
+    ///
+    /// - Parameter other: A filter of the same type as the current filter.
+    public mutating func formUnion(_ other: BloomFilter) {
+        precondition(other.hashCount == hashCount, "To form an union both BloomFilter must have the same number of hash functions")
+        storage |= other.storage
+    }
+
+    /// Removes the elements of this filter that aren’t also in the given filter.
+    ///
+    /// - Parameter other: A filter of the same type as the current filter.
+    public mutating func formIntersection(_ other: BloomFilter) {
+        precondition(other.hashCount == hashCount, "To form an intersection both BloomFilter must have the same number of hash functions")
+        storage &= other.storage
+    }
+
+}
+
+extension BloomFilter {
+
     /// Approximates the `bitWidth` and `hashCount` for a filter that is expected to contain `expectedCardinality` items
     /// and have a `p` probability of false positives.
     ///
