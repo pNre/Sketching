@@ -5,7 +5,13 @@
 //  Created by Pierluigi D'Andrea on 02/03/2019.
 //
 
+#include <TargetConditionals.h>
+
+#if TARGET_OS_IPHONE
+#import <UIKit/UIKit.h>
+#else
 #import <Cocoa/Cocoa.h>
+#endif
 
 //! Project version number for Sketching.
 FOUNDATION_EXPORT double SketchingVersionNumber;

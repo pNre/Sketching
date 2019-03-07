@@ -1,4 +1,4 @@
-module Bridged [system] {
+module Bridged {
     header "builtins.h"
     export *
 }
