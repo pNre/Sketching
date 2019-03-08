@@ -12,6 +12,8 @@ public struct BitSet {
 
     /// The number of bits used for the representation of the `BitSet`.
     public let bitWidth: Int
+
+    /// Stores the bits packed in UInt64 values.
     private var storage: [UInt64]
 
     /// Accesses the bit at the specified position.

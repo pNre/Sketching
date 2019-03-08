@@ -47,7 +47,8 @@ public struct MinHash<Hasher: Hashing> {
 
     /// Merges `other` into the receiver.
     ///
-    /// - Parameter other: A `MinHash` with the same `hashCount` as the receiver.
+    /// - Precondition: Both the receiver and `other` must be initialized with the same `hashCount`.
+    /// - Parameter other: A `MinHash`.
     public mutating func formUnion(_ other: MinHash) {
         precondition(hashCount == other.hashCount, "Both MinHash must be initialized with the same hashCount")
         for i in 0..<hashCount {
@@ -57,6 +58,7 @@ public struct MinHash<Hasher: Hashing> {
 
     /// Estimates the Jaccard similarity coefficient between the `MinHash` and the receiver.
     ///
+    /// - Precondition: Both the receiver and `other` must be initialized with the same `hashCount`.
     /// - Parameter other: A `MinHash`.
     /// - Returns: Jaccard similarity coefficient.
     public func jaccard(_ other: MinHash) -> Double {

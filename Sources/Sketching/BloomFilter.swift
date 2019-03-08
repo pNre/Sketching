@@ -81,6 +81,7 @@ extension BloomFilter {
 
     /// Adds the elements of the given filter to the filter.
     ///
+    /// - Precondition: Both the receiver and `other` must be initialized with the same number of hash functions.
     /// - Parameter other: A filter of the same type as the current filter.
     public mutating func formUnion(_ other: BloomFilter) {
         precondition(other.hashCount == hashCount, "To form an union both BloomFilter must have the same number of hash functions")
@@ -89,6 +90,7 @@ extension BloomFilter {
 
     /// Removes the elements of this filter that aren’t also in the given filter.
     ///
+    /// - Precondition: Both the receiver and `other` must be initialized with the same number of hash functions.
     /// - Parameter other: A filter of the same type as the current filter.
     public mutating func formIntersection(_ other: BloomFilter) {
         precondition(other.hashCount == hashCount, "To form an intersection both BloomFilter must have the same number of hash functions")
