@@ -38,7 +38,8 @@ public struct BloomFilter<Hasher: Hashing> {
     /// - Parameter newMember: An element to insert into the filter.
     public mutating func insert<C: Collection>(_ newMember: C) where C.Element == UInt8 {
         Hasher
-            .hash(newMember, upperBound: UInt32(storage.bitWidth), hashCount: hashCount)
+            .hash(newMember, upperBound: UInt32(storage.bitWidth))
+            .prefix(hashCount)
             .forEach { storage[Int($0)] = true }
     }
 
@@ -48,7 +49,8 @@ public struct BloomFilter<Hasher: Hashing> {
     /// - Returns: `true` if `member` is possibly in the filter; `false` if certainly isn't.
     public func contains<C: Collection>(_ member: C) -> Bool where C.Element == UInt8 {
         return Hasher
-            .hash(member, upperBound: UInt32(storage.bitWidth), hashCount: hashCount)
+            .hash(member, upperBound: UInt32(storage.bitWidth))
+            .prefix(hashCount)
             .allSatisfy { storage[Int($0)] }
     }
 

@@ -9,13 +9,12 @@ import Foundation
 
 public protocol Hashing {
 
-    /// Map an arbitrary sequence of bytes to `hashCount` unsigned integer hash values.
+    /// Map an arbitrary sequence of bytes to a sequence of unsigned integer hash values.
     ///
     /// - Parameters:
     ///   - value: Sequence of bytes to hash.
     ///   - upperBound: Max value of each hash.
-    ///   - hashCount: Number of hashes to return.
-    /// - Returns: `hashCount` hashes of `data`.
-    static func hash<S: Sequence>(_ value: S, upperBound: UInt32, hashCount: Int) -> [UInt32] where S.Element == UInt8
+    /// - Returns: Sequence of 32bit unsigned hashes of `data`.
+    static func hash<S: Sequence>(_ value: S, upperBound: UInt32) -> AnySequence<UInt32> where S.Element == UInt8
 
 }
