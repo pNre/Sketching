@@ -16,7 +16,7 @@ class BitSetTests: XCTestCase {
     }
 
     func testSettingClearingBits() {
-        var bitSet = BitSet(bitWidth: 50)
+        var bitSet = BitSet(bitWidth: 512)
 
         //  set
         var indices = IndexSet()
