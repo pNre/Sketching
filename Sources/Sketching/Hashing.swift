@@ -8,5 +8,14 @@
 import Foundation
 
 public protocol Hashing {
-    static func hash<C: Collection>(_ val: C, upperBound: UInt32, count: Int) -> [UInt32] where C.Element == UInt8
+
+    /// Map an arbitrary sequence of bytes to `hashCount` unsigned integer hash values.
+    ///
+    /// - Parameters:
+    ///   - value: Sequence of bytes to hash.
+    ///   - upperBound: Max value of each hash.
+    ///   - hashCount: Number of hashes to return.
+    /// - Returns: `hashCount` hashes of `data`.
+    static func hash<S: Sequence>(_ value: S, upperBound: UInt32, hashCount: Int) -> [UInt32] where S.Element == UInt8
+
 }

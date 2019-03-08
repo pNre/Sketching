@@ -20,7 +20,7 @@ public struct MinHash<Hasher: Hashing> {
     }
 
     public mutating func insert<C: Collection>(_ v: C) where C.Element == UInt8 {
-        let hashes = Hasher.hash(v, upperBound: UInt32.max, count: hashCount)
+        let hashes = Hasher.hash(v, upperBound: UInt32.max, hashCount: hashCount)
         for i in 0..<hashValues.count {
             if hashes[i] < hashValues[i] {
                 hashValues[i] = hashes[i]
