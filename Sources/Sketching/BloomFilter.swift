@@ -36,7 +36,7 @@ public struct BloomFilter<Hasher: Hashing> {
     /// Inserts the given element in the filter if it is not already present.
     ///
     /// - Parameter newMember: An element to insert into the filter.
-    public mutating func insert<C: Collection>(_ newMember: C) where C.Element == UInt8 {
+    public mutating func insert<S: Sequence>(_ newMember: S) where S.Element == UInt8 {
         Hasher
             .hash(newMember, upperBound: UInt32(storage.bitWidth))
             .prefix(hashCount)
@@ -47,7 +47,7 @@ public struct BloomFilter<Hasher: Hashing> {
     ///
     /// - Parameter member: An element to look for in the set.
     /// - Returns: `true` if `member` is possibly in the filter; `false` if certainly isn't.
-    public func contains<C: Collection>(_ member: C) -> Bool where C.Element == UInt8 {
+    public func contains<S: Sequence>(_ member: S) -> Bool where S.Element == UInt8 {
         return Hasher
             .hash(member, upperBound: UInt32(storage.bitWidth))
             .prefix(hashCount)
