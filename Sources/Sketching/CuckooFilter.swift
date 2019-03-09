@@ -53,7 +53,7 @@ public struct CuckooFilter<Hasher: IntegerHashing, Fingerprinter: Fingerprinting
             return true
         }
 
-        var evictionIndex = Int(Bool.random() ? i : j)
+        var evictionIndex = Bool.random() ? i : j
         for _ in 0..<evictionsLimit {
             fp = buckets[evictionIndex].randomlyReplace(fp)
             evictionIndex = index(for: fp, previousIndex: i)
