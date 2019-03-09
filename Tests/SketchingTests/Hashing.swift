@@ -8,7 +8,15 @@
 import Foundation
 @testable import Sketching
 
-struct FNV1AHashing: Hashing {
+struct FNV1AHashing: IntegerHashing {
+    static var digestBitWidth: Int {
+        return UInt32.bitWidth
+    }
+
+    static func hash<S>(_ value: S) -> AnySequence<UInt32> where S : Sequence, S.Element == UInt8 {
+        return hash(value, upperBound: .max)
+    }
+
     static func hash<S>(_ value: S, upperBound: UInt32) -> AnySequence<UInt32> where S : Sequence, S.Element == UInt8 {
         let a = hash(value, offsetBasis: 2166136261)
         let b = hash(value, offsetBasis: 3560826425)

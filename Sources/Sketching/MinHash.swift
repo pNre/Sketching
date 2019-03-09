@@ -7,27 +7,27 @@
 
 import Foundation
 
-public struct MinHash<Hasher: Hashing> {
+public struct MinHash<Hasher: IntegerHashing> {
 
     /// Number of hash functions used by the receiver.
     public var hashCount: Int {
         return hashValues.count
     }
 
-    private var hashValues: [UInt32]
+    private var hashValues: [Hasher.Digest]
 
     /// Creates an empty `MinHash`.
     ///
     /// - Parameter hashCount: Number of hash functions to use.
     public init(hashCount: Int) {
-        self.hashValues = Array(repeating: .max, count: hashCount)
+        self.hashValues = Array(repeating: Hasher.Digest.max, count: hashCount)
     }
 
     /// Inserts the given element in the `MinHash` if it is not already present.
     ///
     /// - Parameter newMember: An element to insert into the `MinHash`.
     public mutating func insert<S: Sequence>(_ newMember: S) where S.Element == UInt8 {
-        let hashes = Hasher.hash(newMember, upperBound: UInt32.max).makeIterator()
+        let hashes = Hasher.hash(newMember).makeIterator()
         for index in hashValues.indices {
             if let hash = hashes.next(), hash < hashValues[index] {
                 hashValues[index] = hash

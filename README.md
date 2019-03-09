@@ -4,7 +4,8 @@ A collection of sketching algorithms in Swift.
 * [x] [BitSet](#bitset)
 * [x] [MinHash](#minhash)
 * [x] [HyperLogLog](#hyperloglog)
-* [x] [Bloom filter](#bloom-filter)
+* [x] [Bloom Filter](#bloom-filter)
+* [x] [Cuckoo Filter](#cuckoo-filter)
 
 # Overview
 
@@ -128,3 +129,6 @@ Test containment:
 (lldb) po f.contains("gh".utf8)
 false
 ```
+
+## Cuckoo Filter
+

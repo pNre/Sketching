@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct HyperLogLog<Hasher: Hashing> {
+public struct HyperLogLog<Hasher: IntegerHashing> {
 
     /// Precision.
     private let b: Int
@@ -33,8 +33,8 @@ public struct HyperLogLog<Hasher: Hashing> {
     ///
     /// - Parameter newMember: An element to insert into the `HyperLogLog`.
     public mutating func insert<S: Sequence>(_ newMember: S) where S.Element == UInt8 {
-        let x = Hasher.hash(newMember, upperBound: UInt32.max).makeIterator().next()!
-        let index = 1 + Int(x & UInt32(m - 1))
+        let x = Hasher.hash(newMember)!
+        let index = 1 + Int(x & Hasher.Digest(m - 1))
         let w = x >> b
         let pw = w == 0 ? 0 : UInt8(w.leadingZeroBitCount + 1)
         registers[index] = max(registers[index], pw)

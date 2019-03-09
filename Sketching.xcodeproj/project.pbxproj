@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E82F57B3223327B0006F56FE /* CuckooFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F57B2223327B0006F56FE /* CuckooFilterTests.swift */; };
+		E82F57B52233280D006F56FE /* Fingerprinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82F57B42233280D006F56FE /* Fingerprinting.swift */; };
 		E83005192231682000490715 /* Sketching.h in Headers */ = {isa = PBXBuildFile; fileRef = E84B992A22316545006A62D1 /* Sketching.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E830051A223168A900490715 /* Sketching.h in Headers */ = {isa = PBXBuildFile; fileRef = E84B992A22316545006A62D1 /* Sketching.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E830543E223305D600545E99 /* CuckooFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830543D223305D600545E99 /* CuckooFilter.swift */; };
+		E830543F223305D600545E99 /* CuckooFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E830543D223305D600545E99 /* CuckooFilter.swift */; };
 		E84B994122316545006A62D1 /* BloomFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84B992B22316545006A62D1 /* BloomFilter.swift */; };
 		E84B994222316545006A62D1 /* HyperLogLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84B992C22316545006A62D1 /* HyperLogLog.swift */; };
 		E84B994322316545006A62D1 /* MinHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84B992D22316545006A62D1 /* MinHash.swift */; };
@@ -28,6 +32,8 @@
 		E84B995C223165B2006A62D1 /* BloomFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84B993D22316545006A62D1 /* BloomFilterTests.swift */; };
 		E84B995D223165B2006A62D1 /* Hashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84B993E22316545006A62D1 /* Hashing.swift */; };
 		E84D9057222A9BDA0085A650 /* Sketching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84D904D222A9BDA0085A650 /* Sketching.framework */; };
+		E8E0915122331851004B4603 /* Fingerprinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E0915022331851004B4603 /* Fingerprinting.swift */; };
+		E8E0915222331851004B4603 /* Fingerprinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E0915022331851004B4603 /* Fingerprinting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E82F57B2223327B0006F56FE /* CuckooFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuckooFilterTests.swift; sourceTree = "<group>"; };
+		E82F57B42233280D006F56FE /* Fingerprinting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fingerprinting.swift; sourceTree = "<group>"; };
+		E830543D223305D600545E99 /* CuckooFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuckooFilter.swift; sourceTree = "<group>"; };
 		E84B992A22316545006A62D1 /* Sketching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sketching.h; sourceTree = "<group>"; };
 		E84B992B22316545006A62D1 /* BloomFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloomFilter.swift; sourceTree = "<group>"; };
 		E84B992C22316545006A62D1 /* HyperLogLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HyperLogLog.swift; sourceTree = "<group>"; };
@@ -61,6 +70,7 @@
 		E84D9056222A9BDA0085A650 /* SketchingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SketchingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84D9069222ABC300085A650 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E8BDA974222FD07D0044465B /* Sketching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sketching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E0915022331851004B4603 /* Fingerprinting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fingerprinting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +112,14 @@
 			isa = PBXGroup;
 			children = (
 				E84B992A22316545006A62D1 /* Sketching.h */,
+				E84B993022316545006A62D1 /* Info.plist */,
+				E84B992E22316545006A62D1 /* BitSet.swift */,
 				E84B992B22316545006A62D1 /* BloomFilter.swift */,
+				E830543D223305D600545E99 /* CuckooFilter.swift */,
+				E8E0915022331851004B4603 /* Fingerprinting.swift */,
+				E84B992F22316545006A62D1 /* Hashing.swift */,
 				E84B992C22316545006A62D1 /* HyperLogLog.swift */,
 				E84B992D22316545006A62D1 /* MinHash.swift */,
-				E84B992E22316545006A62D1 /* BitSet.swift */,
-				E84B992F22316545006A62D1 /* Hashing.swift */,
-				E84B993022316545006A62D1 /* Info.plist */,
 			);
 			path = Sketching;
 			sourceTree = "<group>";
@@ -141,12 +153,14 @@
 		E84B993722316545006A62D1 /* SketchingTests */ = {
 			isa = PBXGroup;
 			children = (
-				E84B993822316545006A62D1 /* MinHashTests.swift */,
-				E84B993B22316545006A62D1 /* HyperLogLogTests.swift */,
+				E84B993F22316545006A62D1 /* Info.plist */,
 				E84B993C22316545006A62D1 /* BitSetTests.swift */,
 				E84B993D22316545006A62D1 /* BloomFilterTests.swift */,
+				E82F57B2223327B0006F56FE /* CuckooFilterTests.swift */,
+				E82F57B42233280D006F56FE /* Fingerprinting.swift */,
 				E84B993E22316545006A62D1 /* Hashing.swift */,
-				E84B993F22316545006A62D1 /* Info.plist */,
+				E84B993B22316545006A62D1 /* HyperLogLogTests.swift */,
+				E84B993822316545006A62D1 /* MinHashTests.swift */,
 			);
 			path = SketchingTests;
 			sourceTree = "<group>";
@@ -322,6 +336,8 @@
 				E84B994322316545006A62D1 /* MinHash.swift in Sources */,
 				E84B994222316545006A62D1 /* HyperLogLog.swift in Sources */,
 				E84B994422316545006A62D1 /* BitSet.swift in Sources */,
+				E8E0915122331851004B4603 /* Fingerprinting.swift in Sources */,
+				E830543E223305D600545E99 /* CuckooFilter.swift in Sources */,
 				E84B994122316545006A62D1 /* BloomFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E84B995D223165B2006A62D1 /* Hashing.swift in Sources */,
+				E82F57B52233280D006F56FE /* Fingerprinting.swift in Sources */,
+				E82F57B3223327B0006F56FE /* CuckooFilterTests.swift in Sources */,
 				E84B995A223165B2006A62D1 /* HyperLogLogTests.swift in Sources */,
 				E84B9959223165B2006A62D1 /* MinHashTests.swift in Sources */,
 				E84B995B223165B2006A62D1 /* BitSetTests.swift in Sources */,
@@ -347,6 +365,8 @@
 				E84B995522316554006A62D1 /* MinHash.swift in Sources */,
 				E84B995422316554006A62D1 /* HyperLogLog.swift in Sources */,
 				E84B995622316554006A62D1 /* BitSet.swift in Sources */,
+				E8E0915222331851004B4603 /* Fingerprinting.swift in Sources */,
+				E830543F223305D600545E99 /* CuckooFilter.swift in Sources */,
 				E84B995322316554006A62D1 /* BloomFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct BloomFilter<Hasher: Hashing> {
+public struct BloomFilter<Hasher: IntegerHashing> {
 
     /// Number of hash functions
     public let hashCount: Int
     private var storage: BitSet
 
-    /// Creates an empty `BloomFilter`
+    /// Creates an empty `BloomFilter`.
     ///
     /// - Parameters:
     ///   - width: Size of the underlaying `BitSet`.
@@ -38,18 +38,18 @@ public struct BloomFilter<Hasher: Hashing> {
     /// - Parameter newMember: An element to insert into the filter.
     public mutating func insert<S: Sequence>(_ newMember: S) where S.Element == UInt8 {
         Hasher
-            .hash(newMember, upperBound: UInt32(storage.bitWidth))
+            .hash(newMember, upperBound: Hasher.Digest(storage.bitWidth))
             .prefix(hashCount)
             .forEach { storage[Int($0)] = true }
     }
 
     /// Returns a Boolean value that indicates whether the given element is possibly in the filter.
     ///
-    /// - Parameter member: An element to look for in the set.
+    /// - Parameter member: An element to look for in the filter.
     /// - Returns: `true` if `member` is possibly in the filter; `false` if certainly isn't.
     public func contains<S: Sequence>(_ member: S) -> Bool where S.Element == UInt8 {
         return Hasher
-            .hash(member, upperBound: UInt32(storage.bitWidth))
+            .hash(member, upperBound: Hasher.Digest(storage.bitWidth))
             .prefix(hashCount)
             .allSatisfy { storage[Int($0)] }
     }
