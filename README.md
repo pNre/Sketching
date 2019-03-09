@@ -13,6 +13,21 @@ A collection of sketching algorithms in Swift.
 
 ### Swift Package Manager
 
+In `Package.swift` add `Sketching` to the `dependencies`:
+```swift
+dependencies: [
+    .package(url: "https://github.com/pNre/Sketching", .branch("master")),
+]
+```
+
+Then reference it in the target that uses the package:
+
+```swift
+.target(
+    name: "CoolExecutable",
+    dependencies: ["Sketching"])
+```
+
 ### Carthage
 
 Add `Sketching` as a dependency in your project's Cartfile:
