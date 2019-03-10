@@ -6,6 +6,7 @@ A collection of sketching algorithms in Swift.
 * [x] [HyperLogLog](#hyperloglog)
 * [x] [Bloom Filter](#bloom-filter)
 * [x] [Cuckoo Filter](#cuckoo-filter)
+* [x] [Count-min](#count-min)
 
 # Overview
 

@@ -32,6 +32,9 @@
 		E84B995C223165B2006A62D1 /* BloomFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84B993D22316545006A62D1 /* BloomFilterTests.swift */; };
 		E84B995D223165B2006A62D1 /* Hashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84B993E22316545006A62D1 /* Hashing.swift */; };
 		E84D9057222A9BDA0085A650 /* Sketching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84D904D222A9BDA0085A650 /* Sketching.framework */; };
+		E86FEF9922352D960059415C /* CountMin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FEF9822352D960059415C /* CountMin.swift */; };
+		E86FEF9A22352D960059415C /* CountMin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FEF9822352D960059415C /* CountMin.swift */; };
+		E86FEF9C22354C300059415C /* CountMinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86FEF9B22354C300059415C /* CountMinTests.swift */; };
 		E8E0915122331851004B4603 /* Fingerprinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E0915022331851004B4603 /* Fingerprinting.swift */; };
 		E8E0915222331851004B4603 /* Fingerprinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E0915022331851004B4603 /* Fingerprinting.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +72,8 @@
 		E84D904D222A9BDA0085A650 /* Sketching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sketching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84D9056222A9BDA0085A650 /* SketchingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SketchingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84D9069222ABC300085A650 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E86FEF9822352D960059415C /* CountMin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountMin.swift; sourceTree = "<group>"; };
+		E86FEF9B22354C300059415C /* CountMinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountMinTests.swift; sourceTree = "<group>"; };
 		E8BDA974222FD07D0044465B /* Sketching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sketching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E0915022331851004B4603 /* Fingerprinting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fingerprinting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +120,7 @@
 				E84B993022316545006A62D1 /* Info.plist */,
 				E84B992E22316545006A62D1 /* BitSet.swift */,
 				E84B992B22316545006A62D1 /* BloomFilter.swift */,
+				E86FEF9822352D960059415C /* CountMin.swift */,
 				E830543D223305D600545E99 /* CuckooFilter.swift */,
 				E8E0915022331851004B4603 /* Fingerprinting.swift */,
 				E84B992F22316545006A62D1 /* Hashing.swift */,
@@ -156,6 +162,7 @@
 				E84B993F22316545006A62D1 /* Info.plist */,
 				E84B993C22316545006A62D1 /* BitSetTests.swift */,
 				E84B993D22316545006A62D1 /* BloomFilterTests.swift */,
+				E86FEF9B22354C300059415C /* CountMinTests.swift */,
 				E82F57B2223327B0006F56FE /* CuckooFilterTests.swift */,
 				E82F57B42233280D006F56FE /* Fingerprinting.swift */,
 				E84B993E22316545006A62D1 /* Hashing.swift */,
@@ -337,6 +344,7 @@
 				E84B994222316545006A62D1 /* HyperLogLog.swift in Sources */,
 				E84B994422316545006A62D1 /* BitSet.swift in Sources */,
 				E8E0915122331851004B4603 /* Fingerprinting.swift in Sources */,
+				E86FEF9922352D960059415C /* CountMin.swift in Sources */,
 				E830543E223305D600545E99 /* CuckooFilter.swift in Sources */,
 				E84B994122316545006A62D1 /* BloomFilter.swift in Sources */,
 			);
@@ -352,6 +360,7 @@
 				E84B995A223165B2006A62D1 /* HyperLogLogTests.swift in Sources */,
 				E84B9959223165B2006A62D1 /* MinHashTests.swift in Sources */,
 				E84B995B223165B2006A62D1 /* BitSetTests.swift in Sources */,
+				E86FEF9C22354C300059415C /* CountMinTests.swift in Sources */,
 				E84B995C223165B2006A62D1 /* BloomFilterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +375,7 @@
 				E84B995422316554006A62D1 /* HyperLogLog.swift in Sources */,
 				E84B995622316554006A62D1 /* BitSet.swift in Sources */,
 				E8E0915222331851004B4603 /* Fingerprinting.swift in Sources */,
+				E86FEF9A22352D960059415C /* CountMin.swift in Sources */,
 				E830543F223305D600545E99 /* CuckooFilter.swift in Sources */,
 				E84B995322316554006A62D1 /* BloomFilter.swift in Sources */,
 			);

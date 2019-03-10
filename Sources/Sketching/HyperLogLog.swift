@@ -23,7 +23,7 @@ public struct HyperLogLog<Hasher: IntegerHashing> {
     /// - Precondition: `4 ≤ b ≤ 16`
     /// - Parameter b: Determines the number of registers to use, `2^b`.
     public init(precision b: Int = 8) {
-        precondition(b >= 4 && b <= 16)
+        precondition(b >= 4 && b <= 16, "b must be ≥ 4 && ≤ 16")
         self.b = b
         self.m = 1 << b
         self.registers = Array(repeating: 0, count: m)
