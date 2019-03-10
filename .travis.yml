@@ -1,0 +1,9 @@
+os: osx
+language: swift
+osx_image: xcode10.2
+
+install:
+- gem install xcpretty-travis-formatter
+
+script:
+- xcodebuild test -project ./Sketching.xcodeproj -scheme SketchingTests | xcpretty -f `xcpretty-travis-formatter`
