@@ -66,6 +66,29 @@ class BitSetTests: XCTestCase {
         XCTAssertEqual(bitSet.cardinality(), indices.count)
     }
 
+    func testCojunction() {
+        var bitSet = BitSet(bitWidth: 128)
+        bitSet[0] = true
+        bitSet[2] = true
+        bitSet[64] = true
+
+        var other = BitSet(bitWidth: bitSet.bitWidth)
+        other[1] = true
+
+        var a = bitSet
+        a.formConjunction(bitSet)
+        XCTAssertEqual(a, bitSet)
+
+        a.formConjunction(other)
+        XCTAssertEqual(a, BitSet(bitWidth: bitSet.bitWidth))
+
+        var b = bitSet
+        other[2] = true
+        b.formConjunction(other)
+        XCTAssertEqual(b.cardinality(), 1)
+        XCTAssertTrue(b[2])
+    }
+
     func testAnd() {
         var bitSet = BitSet(bitWidth: 128)
         bitSet[0] = true
@@ -77,6 +100,30 @@ class BitSetTests: XCTestCase {
 
         XCTAssertEqual(bitSet & bitSet, bitSet)
         XCTAssertEqual(bitSet & other, BitSet(bitWidth: bitSet.bitWidth))
+
+        bitSet &= other
+        XCTAssertEqual(bitSet, BitSet(bitWidth: bitSet.bitWidth))
+    }
+
+    func testDisjunction() {
+        var bitSet = BitSet(bitWidth: 50)
+        bitSet[0] = true
+        bitSet[2] = true
+
+        var other = BitSet(bitWidth: bitSet.bitWidth)
+        other[1] = true
+
+        var disjunction = BitSet(bitWidth: bitSet.bitWidth)
+        disjunction[0] = true
+        disjunction[1] = true
+        disjunction[2] = true
+
+        var a = bitSet
+        a.formDisjunction(bitSet)
+        XCTAssertEqual(a, bitSet)
+
+        a.formDisjunction(other)
+        XCTAssertEqual(a, disjunction)
     }
 
     func testOr() {
@@ -94,6 +141,9 @@ class BitSetTests: XCTestCase {
 
         XCTAssertEqual(bitSet | bitSet, bitSet)
         XCTAssertEqual(bitSet | other, disjunction)
+
+        bitSet |= other
+        XCTAssertEqual(bitSet, disjunction)
     }
 
     func testNegation() {
