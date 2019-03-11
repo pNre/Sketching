@@ -154,9 +154,9 @@ extension CuckooFilter {
         }
 
         fileprivate mutating func randomlyReplace(_ value: T) -> T {
-            let evictedIndex = storage.indices.randomElement()!
-            let evicted = storage[evictedIndex]
-            storage[evictedIndex] = value
+            let evictionIndex = storage.indices.randomElement()!
+            let evicted = storage[evictionIndex]
+            storage[evictionIndex] = value
             return evicted
         }
 
