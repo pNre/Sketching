@@ -80,6 +80,17 @@ public struct BitSet: Codable {
         return storage.reduce(0, { (cardinality, cell) in cardinality + popcount(cell) })
     }
 
+    /// First set bit.
+    ///
+    /// - Returns: First bit that is set in the receiver.
+    public var first: Int? {
+        storage.enumerated().first { (_, storage) in
+            ffs(storage) > 0
+        }.map { (index, storage) in
+            index * UInt64.bitWidth + (ffs(storage) - 1)
+        }
+    }
+
 }
 
 extension BitSet {

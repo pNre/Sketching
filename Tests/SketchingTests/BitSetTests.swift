@@ -168,4 +168,20 @@ class BitSetTests: XCTestCase {
         }
     }
 
+    func testFirst() {
+        var bitSet = BitSet(bitWidth: 50)
+        XCTAssertNil(bitSet.first)
+
+        bitSet[0] = true
+        XCTAssertEqual(bitSet.first, 0)
+
+        bitSet[0] = false
+        bitSet[49] = true
+        XCTAssertEqual(bitSet.first, 49)
+
+        bitSet[49] = false
+        bitSet.negate()
+        XCTAssertEqual(bitSet.first, 0)
+    }
+
 }

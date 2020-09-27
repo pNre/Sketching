@@ -18,3 +18,21 @@ long int popcount(unsigned long long x) {
     return count;
 #endif
 }
+
+long int ffs(unsigned long long x) {
+#if __has_builtin(__builtin_ffsll)
+    return __builtin_ffsll(x);
+#else
+    if (x == 0) {
+        return 0;
+    }
+
+    long int count = 1;
+    while (!(x & 1))
+    {
+        x >>= 1;
+        count++;
+    }
+    return count;
+#endif
+}
