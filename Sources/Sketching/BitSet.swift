@@ -8,7 +8,7 @@
 import Foundation
 import Bridged
 
-public struct BitSet {
+public struct BitSet: Codable {
 
     /// The number of bits used for the representation of the `BitSet`.
     public let bitWidth: Int
