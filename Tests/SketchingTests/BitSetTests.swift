@@ -184,4 +184,18 @@ class BitSetTests: XCTestCase {
         XCTAssertEqual(bitSet.first, 0)
     }
 
+    func testRandomElement() {
+        var bitSet = BitSet(bitWidth: 256)
+        XCTAssertNil(bitSet.randomElement())
+
+        for _ in 0..<10 {
+            let index = Int.random(in: 0..<256)
+            bitSet[index] = true
+
+            let random = bitSet.randomElement()
+            XCTAssertNotNil(random)
+            XCTAssertTrue(bitSet[random!])
+        }
+    }
+
 }

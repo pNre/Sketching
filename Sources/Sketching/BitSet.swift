@@ -84,11 +84,26 @@ public struct BitSet: Codable {
     ///
     /// - Returns: First bit that is set in the receiver.
     public var first: Int? {
-        storage.enumerated().first { (_, storage) in
-            ffs(storage) > 0
-        }.map { (index, storage) in
-            index * UInt64.bitWidth + (ffs(storage) - 1)
+        return storage.enumerated().first { (_, cell) in
+            ffs(cell) > 0
+        }.map { (index, cell) in
+            index * UInt64.bitWidth + (ffs(cell) - 1)
         }
+    }
+
+    /// Random set bit.
+    ///
+    /// - Returns: Random bit that is set in the receiver.
+    public func randomElement() -> Int? {
+        let setStorages = storage.enumerated().filter { (index, cell) in
+            popcount(cell) > 0
+        }
+
+        guard let random = setStorages.randomElement() else {
+            return nil
+        }
+
+        return random.offset * UInt64.bitWidth + (ffs(random.element) - 1)
     }
 
 }
